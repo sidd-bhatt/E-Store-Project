@@ -31,11 +31,17 @@ public class User extends BaseEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
 	private Role role;
+	
 	@OneToOne(mappedBy = "cartOwner",cascade = CascadeType.ALL,orphanRemoval = true)
 	//@JoinColumn(name="customer_id")
 	private GiftCart myCart;
-
 	
+	public void addCart(GiftCart cart)
+	{
+		setMyCart(cart);
+		cart.setCurrentCartUser(this);
+	}
+
 	public User(String firstName, String lastName, String email, String password, Role role) {
 		super();
 		this.firstName = firstName;
@@ -45,92 +51,53 @@ public class User extends BaseEntity {
 		this.role = role;
 	}
 
-	
-	
-	
 	public String getFirstName() {
 		return firstName;
 	}
-
-
-
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-
-
-
 	public String getLastName() {
 		return lastName;
 	}
-
-
-
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-
-
-
 	public String getEmail() {
 		return email;
 	}
-
-
-
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
-
-
 	public String getPassword() {
 		return password;
 	}
-
-
-
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-
-
-
 	public Role getRole() {
 		return role;
 	}
-
-
-
 
 	public void setRole(Role role) {
 		this.role = role;
 	}
 
-
-
-
 	public GiftCart getMyCart() {
 		return myCart;
 	}
 
-
-
-
 	public void setMyCart(GiftCart myCart) {
 		this.myCart = myCart;
 	}
-
-
-
 
 	@Override
 	public String toString() {

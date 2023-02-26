@@ -42,7 +42,53 @@ public class GiftCart extends BaseEntity {
 	//One Gift Cart will have multiple number of Gift Items
 	@OneToMany(mappedBy = "myCart", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<ItemsInCart> cartItems = new ArrayList<>();
-	
 
+	public int getTotalItems() {
+		return totalItems;
+	}
+
+	public void setTotalItems(int totalItems) {
+		this.totalItems = totalItems;
+	}
+
+	public double getTotalCartPrice() {
+		return totalCartPrice;
+	}
+
+	public void setTotalCartPrice(double totalCartPrice) {
+		this.totalCartPrice = totalCartPrice;
+	}
+
+	public LocalDate getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(LocalDate createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public LocalDate getUpdatedOn() {
+		return updatedOn;
+	}
+
+	public void setUpdatedOn(LocalDate updatedOn) {
+		this.updatedOn = updatedOn;
+	}
+
+	public User getCurrentCartUser() {
+		return currentCartUser;
+	}
+
+	public void setCurrentCartUser(User currentCartUser) {
+		this.currentCartUser = currentCartUser;
+	}
+
+	public List<ItemsInCart> getCartItems() {
+		return cartItems;
+	}
+
+	public void setCartItems(List<ItemsInCart> cartItems) {
+		this.cartItems = cartItems;
+	}
 	
 }

@@ -16,7 +16,6 @@ public class GiftCategory extends BaseEntity{
 	@Column(name="category_name",length = 30,unique = true)
 	private String categoryName;
 	
-	//Category : one , parent , non owning(inverse)
 	@OneToMany(mappedBy = "giftsCategory", cascade = CascadeType.ALL, orphanRemoval = true																				 )
 	private List<Gifts> gifts=new ArrayList<>();
 	
