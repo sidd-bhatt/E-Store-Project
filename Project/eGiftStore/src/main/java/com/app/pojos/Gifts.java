@@ -1,9 +1,13 @@
 package com.app.pojos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -20,12 +24,12 @@ public class Gifts extends BaseEntity {
 	private boolean inStock;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id" ,nullable = false )
+	@JoinColumn(name = "category_id" ,nullable = false)
 	private GiftCategory giftCategory;
 	
-	@ManyToOne(fetch = FetchType.LAZY)//Here many to many will be used
+	@ManyToMany
 	@JoinColumn(name = "occassion_id" ,nullable = false )
-	private GiftOccassion giftOccassion;
+	private List<GiftOccassion> giftOccassion=new ArrayList();
 
 	public Gifts() {
 	}
@@ -85,9 +89,18 @@ public class Gifts extends BaseEntity {
 	}
 
 
-
 	public void setGiftCategory(GiftCategory giftCategory) {
 		this.giftCategory = giftCategory;
+	}
+
+
+	public List<GiftOccassion> getGiftOccassion() {
+		return giftOccassion;
+	}
+
+
+	public void setGiftOccassion(List<GiftOccassion> giftOccassion) {
+		this.giftOccassion = giftOccassion;
 	}
 
 

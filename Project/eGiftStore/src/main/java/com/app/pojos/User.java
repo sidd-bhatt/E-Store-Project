@@ -32,7 +32,7 @@ public class User extends BaseEntity {
 	@Column(length = 20)
 	private Role role;
 	
-	@OneToOne(mappedBy = "cartOwner",cascade = CascadeType.ALL,orphanRemoval = true)
+	@OneToOne(mappedBy = "currentCartUser",cascade = CascadeType.ALL,orphanRemoval = true)
 	//@JoinColumn(name="customer_id")
 	private GiftCart myCart;
 	

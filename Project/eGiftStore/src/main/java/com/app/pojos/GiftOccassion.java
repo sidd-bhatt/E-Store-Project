@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,7 +19,7 @@ public class GiftOccassion extends BaseEntity{
 	
 	
 	//many to many will be used
-	@OneToMany(mappedBy = "giftsOccassion", cascade = CascadeType.ALL, orphanRemoval = true																				 )
+	@ManyToMany
 	private List<Gifts> gifts=new ArrayList<>();
 	
 }

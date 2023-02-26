@@ -15,15 +15,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name = "carts")
-@Getter
-@Setter
-@ToString(exclude = {"cartOwner","cartItems"})
 public class GiftCart extends BaseEntity {
 	
 	private int totalItems;
