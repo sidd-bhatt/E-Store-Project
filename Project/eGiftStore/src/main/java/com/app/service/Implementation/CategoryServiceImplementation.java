@@ -20,8 +20,8 @@ public class CategoryServiceImplementation implements CategoryService {
 		return categoryRepository.findAll();
 	}
 	
-	public void addCategory(GiftCategory category) {
-		categoryRepository.save(category);
+	public GiftCategory addCategory(GiftCategory category) {
+		return categoryRepository.save(category);
 	}
 	
 	public void deleteCategoryById(Long id) {
