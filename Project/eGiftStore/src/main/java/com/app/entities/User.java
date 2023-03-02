@@ -1,4 +1,4 @@
-package com.app.pojos;
+package com.app.entities;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,15 +9,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "users_tbl")
-@Getter
-@Setter
-@NoArgsConstructor
+
 public class User extends BaseEntity {
 	
 	@Column(name = "first_name", length = 30)

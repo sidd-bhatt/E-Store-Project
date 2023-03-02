@@ -1,4 +1,4 @@
-package com.app.pojos;
+package com.app.entities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -38,15 +38,15 @@ public class Order extends BaseEntity {
 	private User customer;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "order",orphanRemoval = true)
-	private List<GiftOrderDetails> orderDetailList=new ArrayList<>();
+	private List<OrderDetails> orderDetailList=new ArrayList<>();
 	//helper methods
-	public void addOrderDetail(GiftOrderDetails detail)
+	public void addOrderDetail(OrderDetails detail)
 	{
 		orderDetailList.add(detail);
 		detail.setOrder(this);
 	}
 	
-	public void removeOrderDetail(GiftOrderDetails detail)
+	public void removeOrderDetail(OrderDetails detail)
 	{
 		orderDetailList.remove(detail);
 		detail.setOrder(null);

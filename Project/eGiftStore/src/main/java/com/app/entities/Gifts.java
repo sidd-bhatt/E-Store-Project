@@ -1,13 +1,10 @@
-package com.app.pojos;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.app.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
+//import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -27,9 +24,9 @@ public class Gifts extends BaseEntity {
 	@JoinColumn(name = "category_id" ,nullable = false)
 	private GiftCategory giftCategory;
 	
-	@ManyToMany
-	@JoinColumn(name = "occassion_id" ,nullable = false )
-	private List<GiftOccassion> giftOccassion=new ArrayList();
+//	@ManyToMany
+//	@JoinColumn(name = "occassion_id" ,nullable = false )
+//	private List<GiftOccassion> giftOccassion=new ArrayList();
 
 	public Gifts() {
 	}
@@ -94,14 +91,14 @@ public class Gifts extends BaseEntity {
 	}
 
 
-	public List<GiftOccassion> getGiftOccassion() {
-		return giftOccassion;
-	}
-
-
-	public void setGiftOccassion(List<GiftOccassion> giftOccassion) {
-		this.giftOccassion = giftOccassion;
-	}
+//	public List<GiftOccassion> getGiftOccassion() {
+//		return giftOccassion;
+//	}
+//
+//
+//	public void setGiftOccassion(List<GiftOccassion> giftOccassion) {
+//		this.giftOccassion = giftOccassion;
+//	}
 
 
 	@Override

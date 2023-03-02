@@ -1,4 +1,4 @@
-package com.app.pojos;
+package com.app.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "order_detail")
-public class GiftOrderDetails extends BaseEntity {
+public class OrderDetails extends BaseEntity {
 	
 	private int quantity;
 	private double totalPrice;
@@ -23,7 +23,7 @@ public class GiftOrderDetails extends BaseEntity {
 	private Gifts gift;
 	
 
-	public GiftOrderDetails(int quantity, double totalPrice, Gifts gift) {
+	public OrderDetails(int quantity, double totalPrice, Gifts gift) {
 		super();
 		this.quantity = quantity;
 		this.totalPrice = totalPrice;
