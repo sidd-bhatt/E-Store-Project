@@ -12,7 +12,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users_tbl")
-
 public class User extends BaseEntity {
 	
 	@Column(name = "first_name", length = 30)
@@ -21,6 +20,8 @@ public class User extends BaseEntity {
 	private String lastName;
 	@Column(length = 20, unique = true)
 	private String email;
+	@Column(length = 20, unique = true)
+	private long mobile;
 	@Column(length = 50)
 	private String password;
 	@Enumerated(EnumType.STRING)
@@ -36,14 +37,21 @@ public class User extends BaseEntity {
 		setMyCart(cart);
 		cart.setCurrentCartUser(this);
 	}
+	
+	public User() {
+		super();
+	}
 
-	public User(String firstName, String lastName, String email, String password, Role role) {
+	public User(String firstName, String lastName, String email, long mobile, String password, Role role,
+			GiftCart myCart) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.mobile = mobile;
 		this.password = password;
 		this.role = role;
+		this.myCart = myCart;
 	}
 
 	public String getFirstName() {
@@ -68,6 +76,14 @@ public class User extends BaseEntity {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public long getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(long mobile) {
+		this.mobile = mobile;
 	}
 
 	public String getPassword() {

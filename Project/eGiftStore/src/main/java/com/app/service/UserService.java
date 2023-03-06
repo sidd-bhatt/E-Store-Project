@@ -1,8 +1,11 @@
 package com.app.service;
 
+import java.util.List;
 
-public interface UserService {
-	
+import com.app.entities.Gifts;
+
+public interface UserService {	
 	public void deleteUserById(Long id);
+	public List<Gifts> findAllGifts();
 
 }

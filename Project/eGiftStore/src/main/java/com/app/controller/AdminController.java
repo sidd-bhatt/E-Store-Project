@@ -43,7 +43,7 @@ public class AdminController {
 	}
 	
 	@GetMapping("/getCategoryById{id}")
-	public Optional<GiftCategory> getStudentById(Long id) {
+	public Optional<GiftCategory> getCategoryById(Long id) {
 		return categoryService.getCategoryById(id);
 	}
 	
