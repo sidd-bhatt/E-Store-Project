@@ -1,0 +1,9 @@
+#shopkeeperbtn{
+    background-color: white;
+    color: black;
+}
+
+#shopkeeper{
+    margin: auto;
+    display: table;
+}

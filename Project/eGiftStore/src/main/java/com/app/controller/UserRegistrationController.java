@@ -3,6 +3,7 @@ package com.app.controller;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,9 +24,9 @@ public class UserRegistrationController {
 	private ModelMapper mapper;
 	
 	@PostMapping("/addUser")
-	public User registerCustomer(@RequestBody UserAdd newUser) {
-		User user=mapper.map(newUser, User.class);
-		return userRegService.addUser(user);
+	public User registerCustomer(@RequestBody User newUser) {
+		userRegService.addUser(newUser);
+		return newUser;
 	}
 
 }

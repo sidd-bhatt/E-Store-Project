@@ -21,7 +21,7 @@ public class User extends BaseEntity {
 	@Column(length = 20, unique = true)
 	private String email;
 	@Column(length = 20, unique = true)
-	private long mobile;
+	private String mobile;
 	@Column(length = 50)
 	private String password;
 	@Enumerated(EnumType.STRING)
@@ -42,8 +42,7 @@ public class User extends BaseEntity {
 		super();
 	}
 
-	public User(String firstName, String lastName, String email, long mobile, String password, Role role,
-			GiftCart myCart) {
+	public User(String firstName, String lastName, String email, String mobile, String password, Role role) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -51,7 +50,6 @@ public class User extends BaseEntity {
 		this.mobile = mobile;
 		this.password = password;
 		this.role = role;
-		this.myCart = myCart;
 	}
 
 	public String getFirstName() {
@@ -78,11 +76,11 @@ public class User extends BaseEntity {
 		this.email = email;
 	}
 	
-	public long getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(long mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 
